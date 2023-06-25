@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Shoe Materials</title>
+  <meta charset="UTF-8">
+  <title>My Picture Website</title>
   <style>
+    /* Add some basic styling */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -10,59 +12,44 @@
     }
     
     header {
-      background-color: #333;
-      color: #fff;
+      background-color: #f1f1f1;
       padding: 20px;
       text-align: center;
     }
     
-    main {
-      padding: 20px;
-    }
-    
-    .shoeMaterial {
-      display: inline-block;
-      width: 300px;
-      border: 1px solid #ddd;
+    footer {
+      background-color: #f1f1f1;
       padding: 20px;
       text-align: center;
+    }
+    
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .gallery img {
       margin: 10px;
-    }
-    
-    .shoeMaterial img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      margin-bottom: 10px;
-    }
-    
-    .shoeMaterial h3 {
-      margin: 0;
-    }
-    
-    .shoeMaterial p {
-      margin: 10px 0;
+      max-width: 300px;
+      max-height: 200px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Shoe Materials</h1>
+    <h1>Welcome to My Picture Website</h1>
   </header>
-  <main>
-    <div class="shoeMaterial">
-      <img src="leather.jpg" alt="Leather">
-      <h3>Leather</h3>
-      <p>Genuine leather material for shoes.</p>
-    </div>
-    
-    <div class="shoeMaterial">
-      <img src="suede.jpg" alt="Suede">
-      <h3>Suede</h3>
-      <p>Soft and luxurious suede material for shoes.</p>
-    </div>
-    
-    <!-- Add more shoe material elements as needed -->
-  </main>
+
+  <div class="gallery"></div>
+
+  <footer>
+    <h3>Contact Information:</h3>
+    <p>Email: example@example.com</p>
+    <p>Phone: 123-456-7890</p>
+    <a href="https://www.paypal.com">Donate via PayPal</a>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
