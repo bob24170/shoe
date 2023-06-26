@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>My Picture Website</title>
+  <meta name="description" content="Welcome to My Picture Website. Explore a gallery of stunning images. Contact us for more information and donations via PayPal.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     /* Add some basic styling */
     body {
@@ -24,15 +26,21 @@
     }
     
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 10px;
+      justify-items: center;
     }
     
     .gallery img {
-      margin: 10px;
-      max-width: 300px;
-      max-height: 200px;
+      max-width: 100%;
+      height: auto;
+    }
+    
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
     }
   </style>
 </head>
@@ -41,7 +49,14 @@
     <h1>Welcome to My Picture Website</h1>
   </header>
 
-  <div class="gallery"></div>
+  <main>
+    <div class="gallery">
+      <img src="https://example.com/image1.jpg" alt="Image 1">
+      <img src="https://example.com/image2.jpg" alt="Image 2">
+      <img src="https://example.com/image3.jpg" alt="Image 3">
+      <!-- Add more images as needed -->
+    </div>
+  </main>
 
   <footer>
     <h3>Contact Information:</h3>
@@ -49,7 +64,5 @@
     <p>Phone: 123-456-7890</p>
     <a href="https://www.paypal.com">Donate via PayPal</a>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
