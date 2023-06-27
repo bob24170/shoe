@@ -79,16 +79,18 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+                overflow: hidden;
               }
 
               img {
                 max-width: 100%;
                 max-height: 100%;
                 cursor: zoom-out;
+                transition: transform 0.3s ease;
               }
 
-              img:hover {
-                zoom: 1.5;
+              img.zoomed {
+                transform: scale(5);
               }
 
               textarea {
@@ -110,20 +112,19 @@
             </style>
           </head>
           <body>
-            <img src="${url}" alt="Image">
+            <img id="image" src="${url}" alt="Image">
             <textarea id="comment" placeholder="Leave a comment"></textarea>
             <button onclick="submitComment()">Submit</button>
 
             <script>
-              function submitComment() {
-                const comment = document.getElementById('comment').value;
-                // Do something with the comment, like sending it to a server
-                console.log(comment);
+              const image = document.getElementById('image');
+              let scale = 1;
+
+              function zoomIn() {
+                if (scale < 5) {
+                  scale += 0.5;
+                  updateZoom();
+                }
               }
-            </script>
-          </body>
-        </html>
-      `);
-      newWindow.document.close();
-    }
-  </script
+
+              function zoomOut()
