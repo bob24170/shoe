@@ -67,7 +67,36 @@
   </style>
   <script>
     function openImage(url) {
-      window.open(url, '_blank');
+      const newWindow = window.open();
+      newWindow.document.write(`
+        <html>
+          <head>
+            <title>Image</title>
+            <style>
+              body {
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+
+              img {
+                max-width: 100%;
+                max-height: 100%;
+                cursor: zoom-out;
+              }
+
+              img:hover {
+                zoom: 1.5;
+              }
+            </style>
+          </head>
+          <body>
+            <img src="${url}" alt="Image">
+          </body>
+        </html>
+      `);
+      newWindow.document.close();
     }
   </script>
 </head>
@@ -79,23 +108,9 @@
   <main>
     <div class="gallery">
       <div>
-        <img src="1.jpg" alt="Image 1" onclick="openImage('https://example.com/image1.jpg')">
+        <img src="1.jpg" alt="Image 1" onclick="openImage('1.jpg')">
         <div class="description" onclick="openImage('1.jpg')">Description for Image 1</div>
       </div>
       <div>
         <img src="https://example.com/image2.jpg" alt="Image 2" onclick="openImage('https://example.com/image2.jpg')">
-        <div class="description" onclick="openImage('https://example.com/image2.jpg')">Description for Image 2</div>
-      </div>
-      <div>
-        <img src="https://example.com/image3.jpg" alt="Image 3" onclick="openImage('https://example.com/image3.jpg')">
-        <div class="description" onclick="openImage('https://example.com/image3.jpg')">Description for Image 3</div>
-      </div>
-      <!-- Add more images as needed -->
-    </div>
-  </main>
-
-  <footer>
-    <h3>Contact Information:</h3>
-    <p>Email: example@example.com</p>
-    <p>Phone: 123-456-7890</p>
-    <a href="https://www
+        <div class="description" onclick="openImage('https://example.com/image2.jpg')">Description for
