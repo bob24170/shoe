@@ -90,7 +90,7 @@
               }
 
               img.zoomed {
-                transform: scale(5);
+                transform: scale(1.5);
               }
 
               textarea {
@@ -109,3 +109,17 @@
                 border: none;
                 cursor: pointer;
               }
+            </style>
+          </head>
+          <body>
+            <img id="image" src="${url}" alt="Image">
+            <textarea id="comment" placeholder="Leave a comment"></textarea>
+            <button onclick="submitComment()">Submit</button>
+
+            <script>
+              const image = document.getElementById('image');
+              let isZoomed = false;
+
+              function toggleZoom() {
+                isZoomed = !isZoomed;
+                image.classList.toggle('zoomed', is
