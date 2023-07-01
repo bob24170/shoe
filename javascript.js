@@ -1,6 +1,6 @@
 // Define an array of picture URLs
 const pictureUrls = [
-  'https://example.com/image1.jpg',
+  '1.jpg',
   'https://example.com/image2.jpg',
   'https://example.com/image3.jpg',
   // Add more picture URLs as needed
