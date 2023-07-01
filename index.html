@@ -90,7 +90,7 @@
               }
 
               img.zoomed {
-                transform: scale(1.5);
+                transform: scale(5);
               }
 
               textarea {
@@ -118,8 +118,13 @@
 
             <script>
               const image = document.getElementById('image');
-              let isZoomed = false;
+              let scale = 1;
 
-              function toggleZoom() {
-                isZoomed = !isZoomed;
-                image.classList.toggle('zoomed', is
+              function zoomIn() {
+                if (scale < 5) {
+                  scale += 0.5;
+                  updateZoom();
+                }
+              }
+
+              function zoomOut()
