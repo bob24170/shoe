@@ -1,6 +1,6 @@
 // Define an array of picture URLs
 const pictureUrls = [
-  '1.jpg',
+  'https://cdn.pixabay.com/photo/2018/08/18/13/26/interface-3614766_1280.png',
   '1.jpg',
   '1.jpg',
   // Add more picture URLs as needed
