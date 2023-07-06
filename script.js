@@ -1,6 +1,6 @@
 // Define an array of picture URLs
 const pictureUrls = [
-  'H6660839d226d499497dd0acc7ebf6899i.jpg_720x720q50.jpg'
+  'Hfe5ce496290b4a3ba34fad284d42b3a7q.jpg'
   'Hfe5ce496290b4a3ba34fad284d42b3a7q.jpg_720x720q50.jpg',
   'Hbc1ca298dfc44040b1fbcd64a8a6ffe30.jpg_720x720q50.jpg,
   // Add more picture URLs as needed
