@@ -59,4 +59,60 @@
       margin-top: 10px;
       text-align: center;
       cursor: pointer;
-     
+      color: blue;
+      text-decoration: underline;
+    }
+
+    .comments {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f1f1f1;
+    }
+
+    .comment {
+      margin-bottom: 10px;
+    }
+
+    .comment .author {
+      font-weight: bold;
+      color: blue;
+    }
+
+    .comment .timestamp {
+      font-style: italic;
+      font-size: 12px;
+      color: gray;
+    }
+
+    .comment .content {
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Picture Website</h1>
+  </header>
+
+  <div class="gallery"></div>
+
+  <footer>
+    <h3>Contact Information:</h3>
+    <p>Email: example@example.com</p>
+    <p>Phone: 123-456-7890</p>
+    <a href="https://www.paypal.com">Donate via PayPal</a>
+  </footer>
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div class="comment-form">
+      <input type="text" placeholder="Name" id="nameInput">
+      <textarea placeholder="Comment" id="commentInput"></textarea>
+      <button id="submitButton">Submit</button>
+    </div>
+    <div class="comment-list"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
