@@ -53,13 +53,51 @@ function addComment() {
 
   commentList.appendChild(commentContainer);
 
+  // Save comment to local storage
+  const comments = JSON.parse(localStorage.getItem('comments')) || [];
+  const newComment = { name, comment };
+  comments.push(newComment);
+  localStorage.setItem('comments', JSON.stringify(comments));
+
   // Clear the input fields
   nameInput.value = '';
   commentInput.value = '';
 }
 
+// Function to load comments from local storage
+function loadComments() {
+  const comments = JSON.parse(localStorage.getItem('comments')) || [];
+  const commentList = document.querySelector('.comment-list');
+
+  comments.forEach((comment) => {
+    const commentContainer = document.createElement('div');
+    commentContainer.classList.add('comment');
+
+    const authorElement = document.createElement('div');
+    authorElement.classList.add('author');
+    authorElement.textContent = comment.name;
+
+    const timestampElement = document.createElement('div');
+    timestampElement.classList.add('timestamp');
+    timestampElement.textContent = new Date().toLocaleString();
+
+    const contentElement = document.createElement('div');
+    contentElement.classList.add('content');
+    contentElement.textContent = comment.comment;
+
+    commentContainer.appendChild(authorElement);
+    commentContainer.appendChild(timestampElement);
+    commentContainer.appendChild(contentElement);
+
+    commentList.appendChild(commentContainer);
+  });
+}
+
 // Call the renderGallery function when the page loads
 window.addEventListener('DOMContentLoaded', renderGallery);
+
+// Load comments from local storage
+window.addEventListener('DOMContentLoaded', loadComments);
 
 // Add event listener to submit button
 window.addEventListener('DOMContentLoaded', function() {
