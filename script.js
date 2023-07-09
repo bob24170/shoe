@@ -21,7 +21,6 @@ function renderGallery() {
 function addComment() {
   const nameInput = document.getElementById('nameInput');
   const commentInput = document.getElementById('commentInput');
-  const commentList = document.querySelector('.comment-list');
 
   const name = nameInput.value.trim();
   const comment = commentInput.value.trim();
@@ -30,6 +29,8 @@ function addComment() {
     alert('Please enter both your name and a comment.');
     return;
   }
+
+  const commentList = document.querySelector('.comment-list');
 
   const commentContainer = document.createElement('div');
   commentContainer.classList.add('comment');
@@ -47,4 +48,19 @@ function addComment() {
   contentElement.textContent = comment;
 
   commentContainer.appendChild(authorElement);
-  commentContainer.appendChild(timestampElement
+  commentContainer.appendChild(timestampElement);
+  commentContainer.appendChild(contentElement);
+
+  commentList.appendChild(commentContainer);
+
+  // Clear the input fields
+  nameInput.value = '';
+  commentInput.value = '';
+}
+
+// Call the renderGallery function when the page loads
+window.addEventListener('load', renderGallery);
+
+// Add event listener to submit button
+const submitButton = document.getElementById('submitButton');
+submitButton.addEventListener('click', addComment);
