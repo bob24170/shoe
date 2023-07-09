@@ -19,3 +19,50 @@ function renderGallery() {
 
 // Function to add a new comment
 function addComment() {
+  const nameInput = document.getElementById('nameInput');
+  const commentInput = document.getElementById('commentInput');
+
+  const name = nameInput.value.trim();
+  const comment = commentInput.value.trim();
+
+  if (name === '' || comment === '') {
+    alert('Please enter both your name and a comment.');
+    return;
+  }
+
+  const commentList = document.querySelector('.comment-list');
+
+  const commentContainer = document.createElement('div');
+  commentContainer.classList.add('comment');
+
+  const authorElement = document.createElement('div');
+  authorElement.classList.add('author');
+  authorElement.textContent = name;
+
+  const timestampElement = document.createElement('div');
+  timestampElement.classList.add('timestamp');
+  timestampElement.textContent = new Date().toLocaleString();
+
+  const contentElement = document.createElement('div');
+  contentElement.classList.add('content');
+  contentElement.textContent = comment;
+
+  commentContainer.appendChild(authorElement);
+  commentContainer.appendChild(timestampElement);
+  commentContainer.appendChild(contentElement);
+
+  commentList.appendChild(commentContainer);
+
+  // Clear the input fields
+  nameInput.value = '';
+  commentInput.value = '';
+}
+
+// Call the renderGallery function when the page loads
+window.addEventListener('DOMContentLoaded', renderGallery);
+
+// Add event listener to submit button
+window.addEventListener('DOMContentLoaded', function() {
+  const submitButton = document.getElementById('submitButton');
+  submitButton.addEventListener('click', addComment);
+});
